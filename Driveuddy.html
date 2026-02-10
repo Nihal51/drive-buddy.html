@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveBuddy - Professional Driver Service | Raipur Chhattisgarh</title>
+  <meta name="description" content="DriveBuddy - Verified drivers on-demand in Raipur, Bhilai, Durg & Bilaspur. Safe, professional service for personal, medical & outstation travel. Book instantly via WhatsApp.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000;
+      --gray-50: #f9fafb;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --white: #ffffff;
+      --primary: #0066cc;
+      --primary-dark: #0052a3;
+      --success: #22c55e;
+      --border: #e5e7eb;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0f1419;
+      color: #f9fafb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 20, 25, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: rgba(249, 250, 251, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--primary), #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: rgba(249, 250, 251, 0.9);
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: rgba(249, 250, 251, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 16px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px 0 rgb(0, 102, 204, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px 0 rgb(0, 102, 204, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    .section {
+      padding: 96px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 64px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 64px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--success));
+      border-radius: 2px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(20px);
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(0, 102, 204, 0.3);
+    }
+
+    .service-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--primary), var(--success));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 24px;
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      color: rgba(249, 250, 251, 0.8);
+      line-height: 1.6;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--success);
+      transform: scale(1.02);
+    }
+
+    .pricing-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--success);
+      color: white;
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .price-amount {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--success);
+      margin: 24px 0 16px;
+    }
+
+    /* Booking Form */
+    .booking-container {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .booking-form {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      backdrop-filter: blur(20px);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      color: rgba(249, 250, 251, 0.9);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 16px 20px 16px 48px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: var(--white);
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .form-input::placeholder {
+      color: rgba(249, 250, 251, 0.5);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .form-icon {
+      position: absolute;
+      left: 20px;
+      top: 44px;
+      color: rgba(249, 250, 251, 0.5);
+      font-size: 18px;
+    }
+
+    .form-input[textarea] {
+      min-height: 120px;
+      resize: vertical;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--success));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+    }
+
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 68px;
+      height: 68px;
+      background: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+      transition: all 0.2s ease;
+      z-index: 100;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 12px 35px rgba(34, 197, 94, 0.5);
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(15, 20, 25, 0.8);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 48px 24px 24px;
+      text-align: center;
+    }
+
+    .footer-text {
+      color: rgba(249, 250, 251, 0.6);
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hero { padding: 140px 20px 60px; }
+      .hero-stats { gap: 24px; }
+      .section { padding: 64px 20px; }
+      .services-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="logo">DriveBuddy</a>
+      <nav class="nav">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#booking" class="nav-link">Book Now</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Your Driver, On-Demand</h1>
+      <p class="hero-subtitle">
+        Professional, verified drivers across Raipur, Bhilai, Durg & Bilaspur. 
+        Safe travel for personal, medical, night & outstation needs.
+      </p>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">₹300</span>
+          <span class="stat-label">Starting Hourly</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Available</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4 Cities</span>
+          <span class="stat-label">Coverage</span>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="#booking" class="btn btn-primary">
+          <i class="fas fa-car"></i>
+          Book Driver
+        </a>
+        <a href="#pricing" class="btn btn-secondary">
+          <i class="fas fa-tag"></i>
+          See Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3>Personal Driver</h3>
+        <p>Professional drivers for daily commutes, office travel, errands & family use. Available for short trips & city travel.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-moon"></i>
+        </div>
+        <h3>Night Safety</h3>
+        <p>Safe late-night driving for parties, events & night shifts. Prevents drunk or fatigued driving accidents.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <h3>Hospital Transport</h3>
+        <p>Calm, responsible drivers for medical visits, emergencies & patient transfers. Patient-friendly service.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-road"></i>
+        </div>
+        <h3>Outstation Travel</h3>
+        <p>Experienced drivers for intercity trips & multi-day journeys. Highway specialists for long-distance travel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <h2 class="section-title">Simple Pricing</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Hourly Packages</h3>
+        <div class="price-amount">₹300<span style="font-size: 20px;">/hr</span></div>
+        <ul style="text-align: left; color: rgba(249,250,251,0.8); margin-top: 24px;">
+          <li>1 Hour: ₹300</li>
+          <li>2 Hours: ₹500</li>
+          <li>3 Hours: ₹700</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Full Day</h3>
+        <div class="price-amount">₹1100<span style="font-size: 20px;">/day</span></div>
+        <p style="color: rgba(249,250,251,0.8);">Up to 12 hours • Local city</p>
+        <ul style="text-align: left; color: rgba(249,250,251,0.8); margin-top: 24px;">
+          <li>Best value package</li>
+          <li>Includes waiting time</li>
+          <li>Multi-day: ₹1200/day</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Custom Trips</h3>
+        <p style="color: rgba(249,250,251,0.8);">Night charges, emergency & outstation rates available</p>
+        <div style="margin-top: 24px;">
+          <a href="#booking" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="section">
+    <h2 class="section-title">Book Your Driver</h2>
+    <div class="booking-container">
+      <div class="booking-form">
+        <form id="bookingForm">
+          <div class="form-group">
+            <label>Name</label>
+            <i class="fas fa-user form-icon"></i>
+            <input type="text" class="form-input" id="name" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Phone</label>
+            <i class="fas fa-phone form-icon"></i>
+            <input type="tel" class="form-input" id="phone" placeholder="10-digit number" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Pickup Location</label>
+            <i class="fas fa-map-marker-alt form-icon"></i>
+            <input type="text" class="form-input" id="pickup" placeholder="Where to pick up?" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Details</label>
+            <i class="fas fa-align-left form-icon"></i>
+            <textarea class="form-input" id="details" placeholder="Service type, time, destination..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fab fa-whatsapp"></i>
+            Send WhatsApp Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div>
+          <div style="font-weight: 600; font-size: 18px; margin-bottom: 4px;">9111473929</div>
+          <div style="color: rgba(249,250,251,0.6);">Primary • 24/7 Support</div>
+          <div style="color: rgba(249,250,251,0.6);">9893302783</div>
+        </div>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div>
+          <div style="font-weight: 600; font-size: 16px;">drivebuddyind@gmail.com</div>
+          <div style="color: rgba(249,250,251,0.6);">Response within 2 hours</div>
+        </div>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div>
+          <div style="font-weight: 600; font-size: 18px;">9111473929</div>
+          <div style="color: rgba(249,250,251,0.6);">Instant Booking</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-text">
+      © 2026 DriveBuddy. Serving Raipur, Bhilai, Durg & Bilaspur. 
+      Professional driver service you can trust.
+    </p>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919111473929" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Form submission
+    document.getElementById('bookingForm').addEventListener('submit', e => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const pickup = document.getElementById('pickup').value.trim();
+      const details = document.getElementById('details').value.trim();
+
+      if (!name || !phone || !pickup || !details) {
+        alert('Please fill all fields');
+        return;
+      }
+
+      const message = `🚗 DRIVEBUDDY BOOKING
+
+👤 Name: ${name}
+📱 Phone: ${phone}
+📍 Pickup: ${pickup}
+
+📋 Details: ${details}
+
+---
+Raipur | Bhilai | Durg | Bilaspur`;
+
+      window.open(`https://wa.me/919111473929?text=${encodeURIComponent(message)}`, '_blank');
+    });
+
+    // Phone formatting
+    document.getElementById('phone').addEventListener('input', e => {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+    });
+  </script>
+</body>
+</html>
